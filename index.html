@@ -1,14 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amy Rickard - Digital Resume</title>
+    <style>
+        /* Basic styles for the resume */
+        body {
+            background: linear-gradient(
+                35deg, 
+                #55CDFC 20%,    
+                #F7A8B8 20%,    
+                #F7A8B8 40%, 
+                #FFFFFF 40%,    
+                #FFFFFF 60%, 
+                #F7A8B8 60%, 
+                #F7A8B8 80%, 
+                #55CDFC 80%     
+            );
+            background-size: 100% 100%;
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .skills, .education, .experience {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills div, .education div, .experience div {
+            width: 48%;
+            margin: 1%;
+        }
+
+        a {
+            color: #55CDFC;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<link rel="stylesheet" href="app.css">
 <body>
-<h1> Amy </h1>
+    <div class="container">
+        <header>
+            <h1>Amy Rickard</h1>
+            <p>Game Developer / Technomancer</p>
+            <div class="contact-info">
+                <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a> | GitHub: <a href="https://github.com/AmyLD50">github.com/AmyLD50</a></p>
+            </div>
+        </header>
 
-<button onclick="alertButton()">New Button</button>
+        <div class="section">
+            <h2>About Me</h2>
+            <p>
+                Hi, I'm Amy! I'm 19 years old, and as a trans woman navigating the world of technology, I've found my place in Computer Information Systems, focusing on cybersecurity. From a young age, I was fascinated by how things worked behind the screen. I remember picking up my first programming book, a guide to JavaScript, and realizing that this was something I truly loved. This passion led me to delve into backend development with Node.js, where I learned how to create server-side applications and APIs.
+            </p>
+            <p>
+                As I grew, my curiosity only deepened. Computers became more than just machines; they were canvases for creativity and problem-solving. Today, I’m channeling that curiosity into a formal education in cybersecurity. I’m exploring the fascinating—and sometimes dangerous—world of digital security, aiming to understand vulnerabilities and protect information. My path has also taken a creative turn, as I'm now working on a game with friends, merging my love for tech with storytelling, music, and more.
+            </p>
+        </div>
 
+        <div class="section">
+            <h2>Experience</h2>
+            <div class="experience">
+                <div>
+                    <h3>Student Researcher - Cybersecurity Focus</h3>
+                    <p>Location - Buffalo, New York</p>
+                    <p>2024 - Present</p>
+                    <ul>
+                        <li>I'm actively engaged in cybersecurity research, exploring potential vulnerabilities in web applications.</li>
+                        <li>Part of my role involves simulating cyber attacks in a controlled environment to understand how systems can be exploited and what defenses are most effective.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Freelance Backend Developer</h3>
+                    <p>Remote</p>
+                    <p>2019 - Present</p>
+                    <ul>
+                        <li>I provided backend development services, mainly using Node.js to build APIs and web services for small businesses.</li>
+                        <li>One of my main goals was to ensure these systems were secure and scalable, paying close attention to best practices in web security.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education">
+                <div>
+                    <h3>Bachelor of Science in Computer Information Systems</h3>
+                    <p>Buffalo State University - Buffalo, New York</p>
+                    <p>Expected Graduation: 2029</p>
+                    <p>Currently immersed in the study of systems, and programming.</p>
+                </div>
+                <div>
+                    <h3>High School Diploma</h3>
+                    <p>Kenmore East Senior High School- Kenmore, New York</p>
+                    <p>Graduated: 2024</p>
+                    <p>Where I found my love for music</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div>
+                    <ul>
+                        <li>Proficient in JavaScript & Node.js</li>
+                        <li>Familiar with Web Security & Penetration Testing</li>
+                        <li>Fundamentals of Game Development</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>Version Control with Git</li>
+                        <li>Strong Problem-Solving & Debugging Abilities</li>
+                        <li>Team Collaboration & Project Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Story-Driven Game Project</strong> - I’m leading a small team to create a game that weaves together narrative and gameplay. My role involves coding gameplay mechanics, scripting events, and ensuring a seamless player experience.</li>
+                <li><strong>Cybersecurity Exploration</strong> - My personal project focusing on web vulnerabilities. I’m documenting my findings in guides, sharing insights on secure coding practices, and building a small knowledge base for future reference.</li>
+            </ul>
+        </div>
+    </div>
 </body>
-
-<script src="app.js"></script>
 </html>
