@@ -1,7 +1,16 @@
-h1{
-    color: orange;
-}
-
 body {
-    background-color: hotpink;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(
+        35deg, 
+        #55CDFC 20%,    
+        #F7A8B8 20%,    
+        #F7A8B8 40%, 
+        #FFFFFF 40%,    
+        #FFFFFF 60%, 
+        #F7A8B8 60%, 
+        #F7A8B8 80%, 
+        #55CDFC 80%     
+    );
+    background-size: 100% 100%;
 }
