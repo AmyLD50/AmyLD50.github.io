@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amy Rickard - Digital Resume</title>
     <style>
-        /* Basic styles for the resume */
         body {
             background: linear-gradient(
                 35deg, 
@@ -19,19 +18,22 @@
                 #55CDFC 80%     
             );
             background-size: 100% 100%;
-            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            background-attachment: fixed;
             margin: 0;
             font-family: Arial, sans-serif;
+            color: #fff;
+            transition: all 0.3s ease;
         }
 
         .container {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
+            color: #fff;
         }
 
         header {
-            background: #fff;
+            background: #333;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
@@ -40,44 +42,15 @@
         }
 
         .section {
-            background: #fff;
+            background: #3a3a3a;
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
 
-        h1 {
-            margin: 0;
-        }
-
-        .contact-info {
-            margin-top: 10px;
-        }
-
-        .section h2 {
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        .skills, .education, .experience {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .skills div, .education div, .experience div {
-            width: 48%;
-            margin: 1%;
+        h1, h2, h3 {
+            color: #fff;
         }
 
         a {
@@ -87,6 +60,52 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        .light-mode body {
+            background: linear-gradient(
+                35deg, 
+                #55CDFC 20%,    
+                #F7A8B8 20%,    
+                #F7A8B8 40%, 
+                #FFFFFF 40%,    
+                #FFFFFF 60%, 
+                #F7A8B8 60%, 
+                #F7A8B8 80%, 
+                #55CDFC 80%     
+            );
+            color: #000;
+        }
+
+        .light-mode .container {
+            color: #000;
+        }
+
+        .light-mode header, .light-mode .section {
+            background: #fff;
+        }
+
+        .light-mode h1, .light-mode h2, .light-mode h3 {
+            color: #000;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-btn.light-mode {
+            background-color: #fff;
+            color: #333;
         }
     </style>
 </head>
@@ -180,5 +199,27 @@
             </ul>
         </div>
     </div>
+
+    <button class="toggle-btn" id="theme-toggle">Switch to Light Mode</button>
+
+    <script>
+        const toggleButton = document.getElementById("theme-toggle");
+        const body = document.body;
+
+        const currentMode = localStorage.getItem("theme") || "dark-mode";
+        body.classList.add(currentMode);
+
+        toggleButton.textContent = currentMode === "dark-mode" ? "Switch to Light Mode" : "Switch to Dark Mode";
+
+        toggleButton.addEventListener("click", () => {
+            const newMode = body.classList.contains("dark-mode") ? "light-mode" : "dark-mode";
+            body.classList.replace("dark-mode", newMode);
+            body.classList.replace("light-mode", newMode);
+
+            toggleButton.textContent = newMode === "dark-mode" ? "Switch to Light Mode" : "Switch to Dark Mode";
+
+            localStorage.setItem("theme", newMode);
+        });
+    </script>
 </body>
 </html>
