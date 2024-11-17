@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amy Rickard - Digital Resume</title>
     <style>
         body {
-            background: linear-gradient(
-                35deg, 
-                #55CDFC 20%,    
-                #F7A8B8 20%,    
-                #F7A8B8 40%, 
-                #FFFFFF 40%,    
-                #FFFFFF 60%, 
-                #F7A8B8 60%, 
-                #F7A8B8 80%, 
-                #55CDFC 80%     
-            );
+            background: linear-gradient(35deg,
+                    rgba(85, 205, 252, 0.8) 20%,
+                    rgba(247, 168, 184, 0.8) 20%,
+                    rgba(247, 168, 184, 0.8) 40%,
+                    rgba(255, 255, 255, 0.8) 40%,
+                    rgba(255, 255, 255, 0.8) 60%,
+                    rgba(247, 168, 184, 0.8) 60%,
+                    rgba(247, 168, 184, 0.8) 80%,
+                    rgba(85, 205, 252, 0.8) 80%);
             background-size: 100% 100%;
             background-attachment: fixed;
             margin: 0;
             font-family: Arial, sans-serif;
             color: #fff;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease-in-out;
         }
 
         .container {
@@ -30,27 +29,33 @@
             margin: 20px auto;
             padding: 20px;
             color: #fff;
+            transition: color 0.5s ease-in-out;
         }
 
         header {
             background: #333;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.5);
             padding: 20px;
             text-align: center;
             border-radius: 10px;
             margin-bottom: 20px;
+            transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
         }
 
         .section {
             background: #3a3a3a;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.5);
             border-radius: 10px;
+            transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #fff;
+            transition: color 0.5s ease-in-out;
         }
 
         a {
@@ -63,17 +68,15 @@
         }
 
         .light-mode body {
-            background: linear-gradient(
-                35deg, 
-                #55CDFC 20%,    
-                #F7A8B8 20%,    
-                #F7A8B8 40%, 
-                #FFFFFF 40%,    
-                #FFFFFF 60%, 
-                #F7A8B8 60%, 
-                #F7A8B8 80%, 
-                #55CDFC 80%     
-            );
+            background: linear-gradient(35deg,
+                    rgba(85, 205, 252, 0.6) 20%,
+                    rgba(247, 168, 184, 0.6) 20%,
+                    rgba(247, 168, 184, 0.6) 40%,
+                    rgba(255, 255, 255, 0.6) 40%,
+                    rgba(255, 255, 255, 0.6) 60%,
+                    rgba(247, 168, 184, 0.6) 60%,
+                    rgba(247, 168, 184, 0.6) 80%,
+                    rgba(85, 205, 252, 0.6) 80%);
             color: #000;
         }
 
@@ -81,11 +84,15 @@
             color: #000;
         }
 
-        .light-mode header, .light-mode .section {
-            background: #fff;
+        .light-mode header,
+        .light-mode .section {
+            background: #f4f4f4;
+            box-shadow: -5px 10px 25px rgba(0, 0, 0, 0.5);
         }
 
-        .light-mode h1, .light-mode h2, .light-mode h3 {
+        .light-mode h1,
+        .light-mode h2,
+        .light-mode h3 {
             color: #000;
         }
 
@@ -100,33 +107,242 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .toggle-btn.light-mode {
             background-color: #fff;
             color: #333;
+            transform: scale(1.1);
+        }
+
+        .toggle-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .link-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 10px 0;
+            background-color: #55CDFC;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .link-btn:hover {
+            background-color: #4BB6F1;
+            transform: scale(1.05);
+        }
+
+        .link-btn:active {
+            background-color: #3A9FD8;
+            transform: scale(1);
+        }
+
+        .link-container {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .light-mode .link-btn {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .light-mode .link-btn:hover {
+            background-color: #4A4A4A;
+        }
+
+        .location-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .location-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .location-btn:active {
+            background-color: #388e3c;
+            transform: scale(1);
+        }
+
+        .location-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .location-section {
+            background: #3a3a3a;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            font-size: 0.9em;
+        }
+
+        .location-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+            animation: pulse 1s infinite ease-in-out;
+        }
+
+        .location-btn:active {
+            background-color: #388e3c;
+            transform: scale(1);
+        }
+
+        .location-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        .location-btn:hover::before {
+            width: 0;
+            height: 0;
+            opacity: 1;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1.05);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* GitHub button styles */
+        .link-btn.github {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 10px 0;
+            background-color: #333;
+            /* GitHub dark background */
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .link-btn.github:hover {
+            animation: github-pulse 1.5s infinite ease-in-out;
+            background-color: #24292f;
+            /* Slightly lighter GitHub color on hover */
+        }
+
+        /* GitHub Pulse animation */
+        @keyframes github-pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 15px rgba(72, 72, 72, 0.2);
+                /* GitHub colors */
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
             <h1>Amy Rickard</h1>
             <p>Game Developer / Technomancer</p>
-            <div class="contact-info">
-                <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a> | GitHub: <a href="https://github.com/AmyLD50">github.com/AmyLD50</a></p>
-            </div>
         </header>
 
         <div class="section">
             <h2>About Me</h2>
             <p>
-                Hi, I'm Amy! I'm 19 years old, and as a trans woman navigating the world of technology, I've found my place in Computer Information Systems, focusing on cybersecurity. From a young age, I was fascinated by how things worked behind the screen. I remember picking up my first programming book, a guide to JavaScript, and realizing that this was something I truly loved. This passion led me to delve into backend development with Node.js, where I learned how to create server-side applications and APIs.
+                Hi, I'm Amy! I'm 19 years old, and as a trans woman navigating the world of technology, I've found my
+                place in Computer Information Systems, focusing on cybersecurity. From a young age, I was fascinated by
+                how things worked behind the screen. I remember picking up my first programming book, a guide to
+                JavaScript, and realizing that this was something I truly loved. This passion led me to delve into
+                backend development with Node.js, where I learned how to create server-side applications and APIs.
             </p>
             <p>
-                As I grew, my curiosity only deepened. Computers became more than just machines; they were canvases for creativity and problem-solving. Today, I’m channeling that curiosity into a formal education in cybersecurity. I’m exploring the fascinating—and sometimes dangerous—world of digital security, aiming to understand vulnerabilities and protect information. My path has also taken a creative turn, as I'm now working on a game with friends, merging my love for tech with storytelling, music, and more.
+                As I grew, my curiosity only deepened. Computers became more than just machines; they were canvases for
+                creativity and problem-solving. Today, I’m channeling that curiosity into a formal education in
+                cybersecurity. I’m exploring the fascinating—and sometimes dangerous—world of digital security, aiming
+                to understand vulnerabilities and protect information. My path has also taken a creative turn, as I'm
+                now working on a game with friends, merging my love for tech with storytelling, music, and more.
             </p>
+            <div class="link-container">
+                <a href="https://www.linkedin.com/in/yourprofile" class="link-btn">LinkedIn</a>
+                <a href="https://github.com/AmyLD50" class="link-btn">GitHub</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Location</h2>
+            <p>Based in Buffalo, New York</p>
+            <div class="location-container">
+                <p></p>
+                <a href="https://www.google.com/maps/place/Buffalo,+NY" class="location-btn" target="_blank">View
+                    Buffalo on Google Maps</a>
+            </div>
         </div>
 
         <div class="section">
@@ -135,19 +351,22 @@
                 <div>
                     <h3>Student Researcher - Cybersecurity Focus</h3>
                     <p>Location - Buffalo, New York</p>
-                    <p>2024 - Present</p>
+                    <p>2023 - Present</p>
                     <ul>
-                        <li>I'm actively engaged in cybersecurity research, exploring potential vulnerabilities in web applications.</li>
-                        <li>Part of my role involves simulating cyber attacks in a controlled environment to understand how systems can be exploited and what defenses are most effective.</li>
+                        <li>Conducting research on cybersecurity threats, vulnerabilities, and mitigation strategies.
+                        </li>
+                        <li>Collaborating with faculty on cybersecurity projects and real-world case studies.</li>
                     </ul>
                 </div>
+
                 <div>
-                    <h3>Freelance Backend Developer</h3>
-                    <p>Remote</p>
-                    <p>2019 - Present</p>
+                    <h3>Freelance Web Developer</h3>
+                    <p>Location - Remote</p>
+                    <p>2023 - Present</p>
                     <ul>
-                        <li>I provided backend development services, mainly using Node.js to build APIs and web services for small businesses.</li>
-                        <li>One of my main goals was to ensure these systems were secure and scalable, paying close attention to best practices in web security.</li>
+                        <li>Working on various web development projects, including websites and web applications for
+                            small businesses.</li>
+                        <li>Responsible for backend functionality, server configuration, and security assessments.</li>
                     </ul>
                 </div>
             </div>
@@ -157,14 +376,9 @@
             <h2>Education</h2>
             <div class="education">
                 <div>
-                    <h3>Bachelor of Science in Computer Information Systems</h3>
-                    <p>Buffalo State University - Buffalo, New York</p>
-                    <p>Expected Graduation: 2029</p>
-                    <p>Currently immersed in the study of systems, and programming.</p>
-                </div>
-                <div>
-                    <h3>High School Diploma</h3>
-                    <p>Kenmore East Senior High School- Kenmore, New York</p>
+                    <h3>University at Buffalo</h3>
+                    <p>Major: Computer Information Systems, Cybersecurity Focus</p>
+                    <p>Location: Buffalo, New York</p>
                     <p>Graduated: 2024</p>
                     <p>Where I found my love for music</p>
                 </div>
@@ -194,8 +408,12 @@
         <div class="section">
             <h2>Projects</h2>
             <ul>
-                <li><strong>Story-Driven Game Project</strong> - I’m leading a small team to create a game that weaves together narrative and gameplay. My role involves coding gameplay mechanics, scripting events, and ensuring a seamless player experience.</li>
-                <li><strong>Cybersecurity Exploration</strong> - My personal project focusing on web vulnerabilities. I’m documenting my findings in guides, sharing insights on secure coding practices, and building a small knowledge base for future reference.</li>
+                <li><strong>Story-Driven Game Project</strong> - I’m leading a small team to create a game that weaves
+                    together narrative and gameplay. My role involves coding gameplay mechanics, scripting events, and
+                    ensuring a seamless player experience.</li>
+                <li><strong>Cybersecurity Exploration</strong> - My personal project focusing on web vulnerabilities.
+                    I’m documenting my findings in guides, sharing insights on secure coding practices, and building a
+                    small knowledge base for future reference.</li>
             </ul>
         </div>
     </div>
@@ -222,4 +440,5 @@
         });
     </script>
 </body>
+
 </html>
