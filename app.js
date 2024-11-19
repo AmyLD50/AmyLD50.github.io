@@ -34,5 +34,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function mailButton(){
-    alert("BOO!");
+    alert("test");
 };
