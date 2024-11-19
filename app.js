@@ -31,3 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(section);
     });
 });
+
+
+function mailButton(){
+    alert("BOO!");
+};
